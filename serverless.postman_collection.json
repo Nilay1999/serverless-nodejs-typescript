@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "3c994fdb-f6ac-407b-9a6c-3ca8b5c8d1c8",
+		"name": "serverless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16123784"
+	},
+	"item": [
+		{
+			"name": "update book by id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\":\"string\", // optional\r\n    \"price\":0, // optional\r\n    \"category\":\"string\", // optional\r\n    \"name\":\"string\" // optional\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/book/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"book",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/dev/book/{id}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"book",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\":\"string\",\r\n    \"price\":0,\r\n    \"category\":\"string\",\r\n    \"name\":\"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/dev/book",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete book by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/dev/book/{id}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"book",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/dev/book",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
