@@ -1,0 +1,62 @@
+service: serverless-auth
+useDotenv: true
+provider:
+    name: aws
+    runtime: nodejs14.x
+    region: eu-west-1
+    profile: default
+    memorySize: 256
+    stage: dev
+
+plugins:
+    - serverless-offline
+    - serverless-plugin-typescript
+    - serverless-dynamodb-local
+
+functions:
+    hello-world:
+        handler: handler.hello
+        events:
+            - http:
+                  path: hello-world
+                  method: get
+                  cors: true
+
+    getBooks:
+        handler: src/book/handler.getBooks
+        events:
+            - http:
+                  path: book
+                  method: get
+                  cors: true
+    getBookById:
+        handler: src/book/handler.getBookById
+        events:
+            - http:
+                  path: book/{id}
+                  method: get
+                  cors: true
+
+    createBook:
+        handler: src/book/handler.createBook
+        events:
+            - http:
+                  path: book
+                  method: post
+                  cors: true
+
+    updateBookById:
+        handler: src/book/handler.updateBookById
+        events:
+            - http:
+                  path: book/{id}
+                  method: patch
+                  cors: true
+
+    deleteBookById:
+        handler: src/book/handler.deleteBookById
+        events:
+            - http:
+                  path: book/{id}
+                  method: delete
+                  cors: true
