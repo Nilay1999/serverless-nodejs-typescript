@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@types/mongoose": "^5.11.97",
+        "aws-sdk": "^2.1409.0",
         "mongoclient": "^1.0.3",
         "mongodb": "^4.4.1",
         "mongoose": "^6.2.1",

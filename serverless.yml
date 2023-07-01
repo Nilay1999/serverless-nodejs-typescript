@@ -60,3 +60,19 @@ functions:
                   path: book/{id}
                   method: delete
                   cors: true
+
+# resources: # CloudFormation template syntax
+#   Resources:
+#     usersTable:
+#       Type: AWS::DynamoDB::Table
+#       Properties:
+#         TableName: customersTable
+#         AttributeDefinitions:
+#           - AttributeName: name
+#             AttributeType: S
+#         KeySchema:
+#           - AttributeName: name
+#             KeyType: HASH
+#         ProvisionedThroughput:
+#           ReadCapacityUnits: 1
+#           WriteCapacityUnits: 1
